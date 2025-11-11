@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { PainPointCard } from "@/components/PainPointCard";
 import { TimelinePhase } from "@/components/TimelinePhase";
+import { ContactForm } from "@/components/ContactForm";
 import { 
   Search, 
   Users, 
@@ -234,24 +236,75 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Contact Form Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Left Column - Info */}
+              <div className="animate-fade-in">
+                <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                  Ready to See TalentFlow AI in Action?
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                  Schedule a personalized demo and discover how our platform can transform your recruitment process. Our team will walk you through:
+                </p>
+                
+                <ul className="space-y-4 mb-8">
+                  {[
+                    "AI-powered candidate matching and scoring",
+                    "Automated resume parsing and data extraction",
+                    "Centralized communication and pipeline tracking",
+                    "Custom analytics and reporting dashboards",
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <div className="w-2 h-2 rounded-full bg-secondary"></div>
+                      </div>
+                      <span className="text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 rounded-lg bg-accent">
+                      <Rocket className="w-6 h-6 text-accent-foreground" />
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-foreground mb-2">Fast Response Time</h3>
+                      <p className="text-sm text-muted-foreground">
+                        Our team typically responds within 24 hours to schedule your personalized demo.
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+
+              {/* Right Column - Form */}
+              <div className="animate-slide-up">
+                <Card className="p-8 shadow-xl border-border">
+                  <h3 className="text-2xl font-bold text-foreground mb-6">
+                    Request Your Demo
+                  </h3>
+                  <ContactForm />
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary via-secondary to-primary">
+      <section className="py-16 bg-gradient-to-r from-primary via-secondary to-primary">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl lg:text-5xl font-bold text-primary-foreground mb-6">
-              Ready to Transform Recruitment?
+            <h2 className="text-3xl lg:text-4xl font-bold text-primary-foreground mb-4">
+              Join India's Journey Towards Smarter Hiring
             </h2>
-            <p className="text-xl text-primary-foreground/90 mb-8">
-              Join India's journey towards smarter, faster, and more efficient hiring
+            <p className="text-lg text-primary-foreground/90">
+              Transform your recruitment process with technology-powered efficiency
             </p>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="bg-background text-foreground hover:bg-background/90">
-                Schedule Demo
-              </Button>
-              <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
-                Contact Team
-              </Button>
-            </div>
           </div>
         </div>
       </section>
