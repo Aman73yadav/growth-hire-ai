@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Navigation } from "@/components/Navigation";
 import { PainPointCard } from "@/components/PainPointCard";
 import { TimelinePhase } from "@/components/TimelinePhase";
 import { ContactForm } from "@/components/ContactForm";
@@ -81,12 +82,15 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+      {/* Navigation */}
+      <Navigation />
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      <section id="hero" className="relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/5 to-transparent"></div>
         
         <div className="container mx-auto px-4 py-20 lg:py-32 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center pt-16 lg:pt-0">{/* Added pt for mobile header offset */}
             <div className="animate-fade-in">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 text-secondary mb-6">
                 <Rocket className="w-4 h-4" />
@@ -126,7 +130,7 @@ const Index = () => {
       </section>
 
       {/* Pain Points Section */}
-      <section className="py-20 bg-background">
+      <section id="pain-points" className="py-20 bg-background scroll-mt-20">{/* scroll-mt-20 for offset */}
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -146,7 +150,7 @@ const Index = () => {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section id="solution" className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -219,7 +223,7 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+      <section id="testimonials" className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5 scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-4">
@@ -258,7 +262,7 @@ const Index = () => {
       </section>
 
       {/* Timeline Section */}
-      <section className="py-20 bg-background">
+      <section id="timeline" className="py-20 bg-background scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
@@ -278,7 +282,7 @@ const Index = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-20 bg-background">
+      <section id="contact" className="py-20 bg-background scroll-mt-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
