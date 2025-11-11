@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { PainPointCard } from "@/components/PainPointCard";
 import { TimelinePhase } from "@/components/TimelinePhase";
 import { ContactForm } from "@/components/ContactForm";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { 
   Search, 
   Users, 
@@ -11,7 +12,8 @@ import {
   Zap, 
   TrendingUp,
   Target,
-  Rocket
+  Rocket,
+  Trophy
 } from "lucide-react";
 import heroImage from "@/assets/hero-recruitment-tech.jpg";
 
@@ -212,6 +214,45 @@ const Index = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-20 bg-gradient-to-br from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 text-accent mb-4">
+              <Trophy className="w-4 h-4" />
+              <span className="text-sm font-semibold">Client Success Stories</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+              Trusted by India's Leading Companies
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              See how TalentFlow AI has transformed recruitment operations across diverse industries
+            </p>
+          </div>
+          
+          <TestimonialsCarousel />
+          
+          {/* Stats Bar */}
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+            {[
+              { value: "500+", label: "Companies Using" },
+              { value: "50K+", label: "Candidates Placed" },
+              { value: "70%", label: "Avg. Time Saved" },
+              { value: "4.9/5", label: "Client Rating" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-3xl lg:text-4xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
